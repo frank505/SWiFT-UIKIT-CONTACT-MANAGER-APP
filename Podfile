@@ -6,6 +6,7 @@ target 'ContactManager' do
   use_frameworks!
   pod 'ETCarouSwift'
   pod 'SwiftVideoBackground'
+  pod 'PhoneNumberKit', '~> 3.3'
   # Pods for ContactManager
 
   target 'ContactManagerTests' do
