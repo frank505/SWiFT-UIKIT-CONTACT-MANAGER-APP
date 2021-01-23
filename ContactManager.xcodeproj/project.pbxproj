@@ -16,6 +16,8 @@
 		5284E12925BB5A2300118CA2 /* vid101.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5284E12825BB5A0E00118CA2 /* vid101.mp4 */; };
 		5284E13625BB67CA00118CA2 /* xing.png in Resources */ = {isa = PBXBuildFile; fileRef = 5284E13525BB67CA00118CA2 /* xing.png */; };
 		5284E13B25BB8F1F00118CA2 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284E13A25BB8F1F00118CA2 /* IntroViewController.swift */; };
+		5284E15425BC1B4D00118CA2 /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284E15325BC1B4D00118CA2 /* UITextFieldExtensions.swift */; };
+		5284E15925BC1BE900118CA2 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284E15825BC1BE900118CA2 /* StringExtensions.swift */; };
 		5298D47725B9EAA3002F1A39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298D47625B9EAA3002F1A39 /* AppDelegate.swift */; };
 		5298D47925B9EAA3002F1A39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298D47825B9EAA3002F1A39 /* SceneDelegate.swift */; };
 		5298D48125B9EAA3002F1A39 /* ContactManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5298D47F25B9EAA3002F1A39 /* ContactManager.xcdatamodeld */; };
@@ -61,6 +63,8 @@
 		5284E12825BB5A0E00118CA2 /* vid101.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = vid101.mp4; path = ../../../../../Downloads/vid101.mp4; sourceTree = "<group>"; };
 		5284E13525BB67CA00118CA2 /* xing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = xing.png; path = ../../../../../Downloads/xing.png; sourceTree = "<group>"; };
 		5284E13A25BB8F1F00118CA2 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		5284E15325BC1B4D00118CA2 /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
+		5284E15825BC1BE900118CA2 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		5298D47325B9EAA3002F1A39 /* ContactManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5298D47625B9EAA3002F1A39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5298D47825B9EAA3002F1A39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 				52C8E7C025BA1ACD00A8A6B6 /* TabsViewController.swift */,
 				522AF56225BAAF7000915AB8 /* UIViewExtensions.swift */,
 				5284E13A25BB8F1F00118CA2 /* IntroViewController.swift */,
+				5284E15325BC1B4D00118CA2 /* UITextFieldExtensions.swift */,
+				5284E15825BC1BE900118CA2 /* StringExtensions.swift */,
 			);
 			path = ContactManager;
 			sourceTree = "<group>";
@@ -462,7 +468,9 @@
 				52C8E7A725BA0A0000A8A6B6 /* RootViewController.swift in Sources */,
 				5284E13B25BB8F1F00118CA2 /* IntroViewController.swift in Sources */,
 				5298D47725B9EAA3002F1A39 /* AppDelegate.swift in Sources */,
+				5284E15925BC1BE900118CA2 /* StringExtensions.swift in Sources */,
 				5298D48125B9EAA3002F1A39 /* ContactManager.xcdatamodeld in Sources */,
+				5284E15425BC1B4D00118CA2 /* UITextFieldExtensions.swift in Sources */,
 				52C8E7BC25BA1AB000A8A6B6 /* SingUpViewController.swift in Sources */,
 				5298D47925B9EAA3002F1A39 /* SceneDelegate.swift in Sources */,
 			);

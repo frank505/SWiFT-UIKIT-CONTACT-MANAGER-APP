@@ -7,6 +7,7 @@ target 'ContactManager' do
   pod 'ETCarouSwift'
   pod 'SwiftVideoBackground'
   pod 'PhoneNumberKit', '~> 3.3'
+  pod 'FlagPhoneNumber'
   # Pods for ContactManager
 
   target 'ContactManagerTests' do

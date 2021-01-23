@@ -1,20 +1,35 @@
 PODS:
   - ETCarouSwift (1.1.0)
+  - FlagPhoneNumber (0.8.0):
+    - FlagPhoneNumber/libPhoneNumberiOS (= 0.8.0)
+  - FlagPhoneNumber/libPhoneNumberiOS (0.8.0)
+  - PhoneNumberKit (3.3.3):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.3.3)
+    - PhoneNumberKit/UIKit (= 3.3.3)
+  - PhoneNumberKit/PhoneNumberKitCore (3.3.3)
+  - PhoneNumberKit/UIKit (3.3.3):
+    - PhoneNumberKit/PhoneNumberKitCore
   - SwiftVideoBackground (3.4.0)
 
 DEPENDENCIES:
   - ETCarouSwift
+  - FlagPhoneNumber
+  - PhoneNumberKit (~> 3.3)
   - SwiftVideoBackground
 
 SPEC REPOS:
   trunk:
     - ETCarouSwift
+    - FlagPhoneNumber
+    - PhoneNumberKit
     - SwiftVideoBackground
 
 SPEC CHECKSUMS:
   ETCarouSwift: f06d65e5b8b346611d53ab82ba008ae1da007e9d
+  FlagPhoneNumber: 3712455b95f66cb0f2016fef7d9e34cddf8c7f9a
+  PhoneNumberKit: 4ce83273551c4d2ae10b7361162f4283dd02835f
   SwiftVideoBackground: 826e0567c737ded2a211aa309e9951c643695e8f
 
-PODFILE CHECKSUM: 108c38bcb48ed7701ecdd11c1c38666ed37dd936
+PODFILE CHECKSUM: 655bd9d9aaa203640d8cc8fe4143ce167ff72710
 
 COCOAPODS: 1.9.3
