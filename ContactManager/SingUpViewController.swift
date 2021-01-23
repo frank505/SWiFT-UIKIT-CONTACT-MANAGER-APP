@@ -9,11 +9,44 @@ import Foundation
 import PhoneNumberKit
 import FlagPhoneNumber
 
-class SignUpViewController:UIViewController{
+class SignUpViewController:UIViewController, FPNTextFieldDelegate{
+    
+    
+    func fpnDidSelectCountry(name: String, dialCode: String, code: String) {
+        print(name, dialCode, code) // Output "France", "+33", "FR"
+    }
+    
+    func fpnDidValidatePhoneNumber(textField: FPNTextField, isValid: Bool) {
+        
+//        if isValid {
+//            textField.layer.borderColor = UIColor.green.cgColor;// Output
+//            print(textField.getRawPhoneNumber());
+//            print("hello world")
+//              } else {
+//                textField.layer.borderColor = UIColor.red.cgColor;
+//                print(textField.getRawPhoneNumber());
+//                print("hi what!");
+//              }
+//        print(isValid);
+        let countString = textField.text!.count;
+        if countString <= 10
+        {
+            textField.layer.borderColor = UIColor.red.cgColor;
+        }else{
+            textField.layer.borderColor = UIColor.green.cgColor;
+        }
+    }
+    
+    
+    
+    func fpnDisplayCountryList() {
+        
+    }
+    
     
     let screenWidth = UIScreen.main.bounds.size.width;
     let screenHeight = UIScreen.main.bounds.size.height;
-    let phoneNumberKit = PhoneNumberKit()
+    
    
     
     
@@ -27,14 +60,12 @@ class SignUpViewController:UIViewController{
     
     func customPhoneNumber () -> FPNTextField{
         let phoneNumberTextField = FPNTextField(frame: CGRect(x: 0, y: 0, width: view.bounds.width - 16, height: 50))
-        phoneNumberTextField.set(phoneNumber: "0600000001");
-        phoneNumberTextField.setFlag(key: .NG);
+        phoneNumberTextField.setFlag(key: .NG)
         phoneNumberTextField.borderStyle = .roundedRect;
         phoneNumberTextField.layer.borderColor = UIColor.yellow.cgColor
         phoneNumberTextField.layer.borderWidth = 1.0
-        phoneNumberTextField.attributedPlaceholder = NSAttributedString(string: "Username",attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]);
-        // Or directly set the phone number with country code, which will update automatically the flag image
-        phoneNumberTextField.set(phoneNumber: "+33600000001")
+        phoneNumberTextField.attributedPlaceholder = NSAttributedString(string: "PhoneNumber",attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]);
+        phoneNumberTextField.addTarget(self, action: #selector(fpnDidValidatePhoneNumber), for: .editingChanged);
         return phoneNumberTextField
     }
     
@@ -109,7 +140,7 @@ class SignUpViewController:UIViewController{
         textField.tintColor = .white
         textField.textColor = .white
         textField.translatesAutoresizingMaskIntoConstraints = false;
-        textField.attributedPlaceholder = NSAttributedString(string: "Confirm Password",attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+        textField.attributedPlaceholder = NSAttributedString(string: "Confirm",attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
         textField.isSecureTextEntry = true
         textField.layer.masksToBounds = true;
         textField.layer.borderColor = UIColor.yellow.cgColor
@@ -127,8 +158,9 @@ class SignUpViewController:UIViewController{
         let email = self.email();
         let password = self.password();
         let customPhone = self.customPhoneNumber()
+        let confirm = self.confirmPassword()
         let stackView = UIStackView(arrangedSubviews:
-                [username,email,customPhone,password]);
+                [username,email,customPhone,password,confirm]);
         stackView.axis = .vertical;
           stackView.spacing = 15;
         stackView.distribution = .fillEqually
@@ -153,11 +185,13 @@ class SignUpViewController:UIViewController{
         sender.placeholder=="Password" ?
         validateEmptyString(sender)
         :
-            sender.placeholder=="PhoneNumber" ?
-                isPhoneNumberValid(sender)
-                :
+        sender.placeholder=="Confirm" ?
+        validateEmptyString(sender)
+        :
         nil;
             
     }
     
+    
+  
 }

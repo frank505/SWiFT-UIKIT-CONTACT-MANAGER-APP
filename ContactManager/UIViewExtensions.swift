@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import FlagPhoneNumber
+
 
 
 extension UIViewController
@@ -48,16 +50,7 @@ extension UIViewController
     }
     
    
-    
-    func isPhoneNumberValid(_ textField: UITextField){
-        let regexp = "^[0-9]{10}$"
-        let boolVal = textField.text?.evaluate(with: regexp);
-        if( boolVal==false){
-        textField.layer.borderColor = UIColor.red.cgColor
-        }else{
-        textField.layer.borderColor = UIColor.green.cgColor;
-        }
-    }
+   
 
     func isZipCodeValid( _ textField:UITextField ){
         let regexp = "^[0-9]{5}$"
