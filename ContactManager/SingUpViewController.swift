@@ -12,6 +12,13 @@ import FlagPhoneNumber
 class SignUpViewController:UIViewController, FPNTextFieldDelegate{
     
     
+    var errResponse : [String:Any] = [
+        "Username":false,
+        "Email":false,
+        "Password":false,
+        "PhoneNumber":false,
+    ];
+    
     func fpnDidSelectCountry(name: String, dialCode: String, code: String) {
         print(name, dialCode, code) // Output "France", "+33", "FR"
     }
@@ -32,8 +39,11 @@ class SignUpViewController:UIViewController, FPNTextFieldDelegate{
         if countString <= 10
         {
             textField.layer.borderColor = UIColor.red.cgColor;
+            self.errResponse["PhoneNumber"] = false;
+            
         }else{
             textField.layer.borderColor = UIColor.green.cgColor;
+            self.errResponse["PhoneNumber"] = true;
         }
     }
     
@@ -48,20 +58,25 @@ class SignUpViewController:UIViewController, FPNTextFieldDelegate{
     let screenHeight = UIScreen.main.bounds.size.height;
     
    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+         return true
+    }
     
     
     override func viewDidLoad()
     {
         super.viewDidLoad();
-        
         view.backgroundColor = UIColor.black;
         self.Views();
     }
     
     func customPhoneNumber () -> FPNTextField{
         let phoneNumberTextField = FPNTextField(frame: CGRect(x: 0, y: 0, width: view.bounds.width - 16, height: 50))
+        phoneNumberTextField.delegate = self;
         phoneNumberTextField.setFlag(key: .NG)
         phoneNumberTextField.borderStyle = .roundedRect;
+        phoneNumberTextField.backgroundColor = .black;
         phoneNumberTextField.layer.borderColor = UIColor.yellow.cgColor
         phoneNumberTextField.layer.borderWidth = 1.0
         phoneNumberTextField.attributedPlaceholder = NSAttributedString(string: "PhoneNumber",attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]);
@@ -80,6 +95,7 @@ class SignUpViewController:UIViewController, FPNTextFieldDelegate{
     private func username() -> UITextField
     {
         let textField = UITextField();
+        textField.delegate = self;
         textField.borderStyle = .roundedRect
         textField.backgroundColor = .black
         textField.textColor = .white
@@ -98,6 +114,7 @@ class SignUpViewController:UIViewController, FPNTextFieldDelegate{
     private func email()->UITextField
     {
         let textField = UITextField();
+        textField.delegate = self;
         textField.borderStyle = .roundedRect
         textField.backgroundColor = .black
         textField.textColor = .white
@@ -117,6 +134,7 @@ class SignUpViewController:UIViewController, FPNTextFieldDelegate{
     private func password()->UITextField
     {
         let textField = UITextField();
+        textField.delegate = self;
         textField.borderStyle = .roundedRect
         textField.backgroundColor = .black
         textField.tintColor = .white
@@ -135,6 +153,7 @@ class SignUpViewController:UIViewController, FPNTextFieldDelegate{
     private func confirmPassword()->UITextField
     {
         let textField = UITextField();
+        textField.delegate = self;
         textField.borderStyle = .roundedRect
         textField.backgroundColor = .black
         textField.tintColor = .white
@@ -150,7 +169,20 @@ class SignUpViewController:UIViewController, FPNTextFieldDelegate{
         return textField;
     }
     
-    
+    public func signUpButton() ->UIButton
+    {
+        let button = UIButton(type: .system);
+        button.addTarget(self, action: #selector(createAccount) , for: .touchUpInside)
+        button.setTitle("Register", for: .normal)
+        button.layer.cornerRadius = 5;
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.translatesAutoresizingMaskIntoConstraints = false
+     button.heightAnchor.constraint(equalToConstant: 45.0).isActive = true
+        button.backgroundColor = UIColor.darkGray
+        
+        return button
+    }
 
     public func Views()
     {
@@ -159,8 +191,9 @@ class SignUpViewController:UIViewController, FPNTextFieldDelegate{
         let password = self.password();
         let customPhone = self.customPhoneNumber()
         let confirm = self.confirmPassword()
+        let signUp = self.signUpButton();
         let stackView = UIStackView(arrangedSubviews:
-                [username,email,customPhone,password,confirm]);
+                [username,email,customPhone,password,confirm,signUp]);
         stackView.axis = .vertical;
           stackView.spacing = 15;
         stackView.distribution = .fillEqually
@@ -176,22 +209,40 @@ class SignUpViewController:UIViewController, FPNTextFieldDelegate{
     
     @objc func validateUserInput(_ sender:UITextField,forEvent event: UIEvent)
     {
-        sender.placeholder == "Username" ?
-            validateEmptyString(sender)
-        :
-            sender.placeholder == "Email" ?
-          isEmailValid(sender)
-        :
-        sender.placeholder=="Password" ?
-        validateEmptyString(sender)
-        :
-        sender.placeholder=="Confirm" ?
-        validateEmptyString(sender)
-        :
-        nil;
+        if sender.placeholder == "Username" {
+            self.errResponse["Username"] = validateEmptyString(sender)
             
+        }
+        
+        if sender.placeholder == "Email" {
+            self.errResponse["Email"] = isEmailValid(sender)
+            
+        }
+        
+        if sender.placeholder == "Password" {
+            self.errResponse["Password"] = validateEmptyString(sender)
+        }
+    
+
     }
     
+    
+    @objc func createAccount(_ sender:UIButton, forEvent event:UIEvent) -> Bool
+    {
+        for (key,value) in self.errResponse {
+            print("\(key) the \(value)")
+            if value as! Bool==false
+            {
+                SharedClass.sharedInstance.alert(view: self, title: "\(key) Error",
+                message: "\(key) was not filled properly")
+                return false;
+            }
+        }
+        
+        
+        
+        return true;
+    }
     
   
 }

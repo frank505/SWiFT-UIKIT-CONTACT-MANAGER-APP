@@ -18,6 +18,7 @@
 		5284E13B25BB8F1F00118CA2 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284E13A25BB8F1F00118CA2 /* IntroViewController.swift */; };
 		5284E15425BC1B4D00118CA2 /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284E15325BC1B4D00118CA2 /* UITextFieldExtensions.swift */; };
 		5284E15925BC1BE900118CA2 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284E15825BC1BE900118CA2 /* StringExtensions.swift */; };
+		5284E17125BC7DF000118CA2 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284E17025BC7DEF00118CA2 /* SharedClass.swift */; };
 		5298D47725B9EAA3002F1A39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298D47625B9EAA3002F1A39 /* AppDelegate.swift */; };
 		5298D47925B9EAA3002F1A39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298D47825B9EAA3002F1A39 /* SceneDelegate.swift */; };
 		5298D48125B9EAA3002F1A39 /* ContactManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5298D47F25B9EAA3002F1A39 /* ContactManager.xcdatamodeld */; };
@@ -65,6 +66,7 @@
 		5284E13A25BB8F1F00118CA2 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		5284E15325BC1B4D00118CA2 /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 		5284E15825BC1BE900118CA2 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		5284E17025BC7DEF00118CA2 /* SharedClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedClass.swift; sourceTree = "<group>"; };
 		5298D47325B9EAA3002F1A39 /* ContactManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5298D47625B9EAA3002F1A39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5298D47825B9EAA3002F1A39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				52C8E7AE25BA10AC00A8A6B6 /* Main.storyboard */,
 				52C8E7B325BA1A8500A8A6B6 /* LoginViewController.swift */,
 				52C8E7BB25BA1AB000A8A6B6 /* SingUpViewController.swift */,
+				5284E17025BC7DEF00118CA2 /* SharedClass.swift */,
 				52C8E7C025BA1ACD00A8A6B6 /* TabsViewController.swift */,
 				522AF56225BAAF7000915AB8 /* UIViewExtensions.swift */,
 				5284E13A25BB8F1F00118CA2 /* IntroViewController.swift */,
@@ -471,6 +474,7 @@
 				5284E15925BC1BE900118CA2 /* StringExtensions.swift in Sources */,
 				5298D48125B9EAA3002F1A39 /* ContactManager.xcdatamodeld in Sources */,
 				5284E15425BC1B4D00118CA2 /* UITextFieldExtensions.swift in Sources */,
+				5284E17125BC7DF000118CA2 /* SharedClass.swift in Sources */,
 				52C8E7BC25BA1AB000A8A6B6 /* SingUpViewController.swift in Sources */,
 				5298D47925B9EAA3002F1A39 /* SceneDelegate.swift in Sources */,
 			);

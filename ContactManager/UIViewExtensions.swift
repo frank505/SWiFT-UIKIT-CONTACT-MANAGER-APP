@@ -52,58 +52,73 @@ extension UIViewController
    
    
 
-    func isZipCodeValid( _ textField:UITextField ){
+    func isZipCodeValid( _ textField:UITextField ) -> Bool{
         let regexp = "^[0-9]{5}$"
         let boolVal = textField.text?.evaluate(with: regexp);
         if( boolVal==false){
         textField.layer.borderColor = UIColor.red.cgColor
+            return false
         }else{
         textField.layer.borderColor = UIColor.green.cgColor;
+            return true
         }
     }
 
-    func isStateValid(_ textField: UITextField){
+    func isStateValid(_ textField: UITextField) ->Bool{
         let regexp = "^[A-Z]{2}$"
         let boolVal = textField.text?.evaluate(with: regexp);
         if( boolVal==false){
         textField.layer.borderColor = UIColor.red.cgColor
+        return false
         }else{
         textField.layer.borderColor = UIColor.green.cgColor;
+            return true
         }
        
     }
 
-    func isCVCValid(_ textField: UITextField) {
+    func isCVCValid(_ textField: UITextField) ->Bool{
         let regexp = "^[0-9]{3,4}$"
         let boolVal = textField.text?.evaluate(with: regexp);
         if( boolVal==false){
         textField.layer.borderColor = UIColor.red.cgColor
+            return false
         }else{
         textField.layer.borderColor = UIColor.green.cgColor;
+            return true
         }
     }
 
-    func isEmailValid(_ textField: UITextField)  {
+    func isEmailValid(_ textField: UITextField) ->Bool {
         let regexp = "[A-Z0-9a-z._]+@([\\w\\d]+[\\.\\w\\d]*)"
         let boolVal = textField.text?.evaluate(with: regexp);
         if( boolVal==false){
         textField.layer.borderColor = UIColor.red.cgColor
+            return false
         }else{
         textField.layer.borderColor = UIColor.green.cgColor;
+            return true
         }
+        
     }
     
-    func validateEmptyString(_ textField:UITextField)
+    func validateEmptyString(_ textField:UITextField) ->Bool
     {
         if(textField.text=="")
         {
             textField.layer.borderColor = UIColor.red.cgColor;
+            return false;
             
         }else
         {
             textField.layer.borderColor = UIColor.green.cgColor;
+            return true;
         }
+        
     }
+    
+    
+    
     
    
 }
