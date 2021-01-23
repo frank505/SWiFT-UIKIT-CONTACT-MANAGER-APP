@@ -8,6 +8,7 @@ target 'ContactManager' do
   pod 'SwiftVideoBackground'
   pod 'PhoneNumberKit', '~> 3.3'
   pod 'FlagPhoneNumber'
+  pod 'IQKeyboardManagerSwift'
   # Pods for ContactManager
 
   target 'ContactManagerTests' do

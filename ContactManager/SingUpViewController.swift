@@ -8,6 +8,7 @@ import UIKit
 import Foundation
 import PhoneNumberKit
 import FlagPhoneNumber
+import IQKeyboardManagerSwift
 
 class SignUpViewController:UIViewController, FPNTextFieldDelegate{
     
@@ -31,7 +32,10 @@ class SignUpViewController:UIViewController, FPNTextFieldDelegate{
         print(name, dialCode, code) // Output "France", "+33", "FR"
     }
     
+   
+        
     func fpnDidValidatePhoneNumber(textField: FPNTextField, isValid: Bool) {
+        
 
         let countString = textField.text!.count;
         if countString <= 10
@@ -66,6 +70,7 @@ class SignUpViewController:UIViewController, FPNTextFieldDelegate{
     {
         super.viewDidLoad();
         view.backgroundColor = UIColor.black;
+        IQKeyboardManager.shared.enable = true
         self.Views();
     }
     
