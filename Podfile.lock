@@ -1,0 +1,20 @@
+PODS:
+  - ETCarouSwift (1.1.0)
+  - SwiftVideoBackground (3.4.0)
+
+DEPENDENCIES:
+  - ETCarouSwift
+  - SwiftVideoBackground
+
+SPEC REPOS:
+  trunk:
+    - ETCarouSwift
+    - SwiftVideoBackground
+
+SPEC CHECKSUMS:
+  ETCarouSwift: f06d65e5b8b346611d53ab82ba008ae1da007e9d
+  SwiftVideoBackground: 826e0567c737ded2a211aa309e9951c643695e8f
+
+PODFILE CHECKSUM: 108c38bcb48ed7701ecdd11c1c38666ed37dd936
+
+COCOAPODS: 1.9.3
