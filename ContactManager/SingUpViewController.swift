@@ -9,6 +9,8 @@ import Foundation
 import PhoneNumberKit
 import FlagPhoneNumber
 import IQKeyboardManagerSwift
+import Alamofire
+
 
 class SignUpViewController:UIViewController, FPNTextFieldDelegate{
     
@@ -243,7 +245,6 @@ class SignUpViewController:UIViewController, FPNTextFieldDelegate{
         }
         
        
-        
         if passwordTextField.text != confirmTextField.text
         {
             print("error here")
@@ -252,8 +253,26 @@ class SignUpViewController:UIViewController, FPNTextFieldDelegate{
             return false;
         }
         
+        //make api request
+        let apiSetting:ApiSettings = ApiSettings();
+        let url:String = apiSetting.setBaseUrl("user/register");
+        let parameters:Dictionary = ["firstname": usernameTextField.text,
+                                     "email": emailTextField.text,
+                                     "password":passwordTextField.text,
+                                     "PhoneNumber":phoneNumberTextField.text
+                                       ];
+        let headers: HTTPHeaders = [
+//                   .authorization(username: "test@email.com", password: "testpassword"),
+                   .accept("application/json")
+        ];
+        
+            AF.request(url,method: .post,parameters: parameters,headers: headers).response{
+            response in debugPrint(response)
+        }
         return true;
     }
+    
+    
     
   
 }

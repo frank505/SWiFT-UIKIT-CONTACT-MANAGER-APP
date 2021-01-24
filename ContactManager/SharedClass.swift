@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 class SharedClass: NSObject {//This is shared class
 static let sharedInstance = SharedClass()
+    
 
     //Show alert
     func alert(view: UIViewController, title: String, message: String) {
@@ -21,6 +22,9 @@ static let sharedInstance = SharedClass()
             view.present(alert, animated: true)
         })
     }
+    
+    
+   
 
     private override init() {
     }
