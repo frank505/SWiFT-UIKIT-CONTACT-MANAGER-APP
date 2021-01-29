@@ -8,6 +8,8 @@ target 'ContactManager' do
   pod 'SwiftVideoBackground'
   pod 'PhoneNumberKit', '~> 3.3'
   pod 'FlagPhoneNumber'
+  pod 'IQKeyboardManagerSwift'
+  pod 'Alamofire', '~> 5.2'
   # Pods for ContactManager
 
   target 'ContactManagerTests' do
